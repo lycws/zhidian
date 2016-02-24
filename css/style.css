@@ -1,0 +1,485 @@
+@charset "utf-8";
+/* CSS Document */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+    display: block;
+}
+
+/*
+ * Corrects inline-block display not defined in IE6/7/8/9 & FF3
+ */
+
+audio,
+canvas,
+video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+/*
+ * Prevents modern browsers from displaying 'audio' without controls
+ * Remove excess height in iOS5 devices
+ */
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+/*
+ * Addresses styling for 'hidden' attribute not present in IE7/8/9, FF3, S4
+ * Known issue: no IE6 support
+ */
+
+[hidden] {
+    display: none;
+}
+
+/*
+ * Addresses margins handled incorrectly in IE6/7
+ */
+
+body {
+	font-family:"微软雅黑";
+	background:#B5EBFF;
+	font-weight:400;
+	font-size:15px;
+	color:#000;
+	overflow:hidden;
+	-webkit-font-smoothing:antialiased;
+    margin: 0;
+}
+
+a{
+	text-decoration:none;
+	color:#FFF;		
+}
+
+.clr{
+	width:0;
+	height:0;
+	overflow:hidden;
+	clear:both;
+}
+
+.st-container{
+	width:100%;
+	height:100%;
+	position:absolute;
+	left:0;
+	top:0;	
+}
+
+.st-container > input,
+.st-container > a{
+	width:20%;
+	height:40px;
+	line-height:40px;
+	position:fixed;
+	bottom:0;
+	cursor:pointer;
+}
+
+.st-container > input{
+	opacity:0;
+	z-index:1000;
+}
+
+.st-container > a{
+	z-index:10;
+	font-weight:700;
+	font-size:30px;
+	background:#10298F;
+	color:#FFF;
+	text-align:center;
+	text-shadow:1px 1px 1px #000000;
+}
+
+#st-control-1,#st-control-1 + a{
+	left:0%;
+}
+
+#st-control-2,#st-control-2 + a{
+	left:20%;
+}
+
+#st-control-3,#st-control-3 + a{
+	left:40%;
+}
+
+#st-control-4,#st-control-4 + a{
+	left:60%;
+}
+
+#st-control-5,#st-control-5 + a{
+	left:80%;
+}
+
+.st-container input:checked + a,
+.st-container input:checked:hover + a{
+	background:#07075F;
+}
+
+.st-container input:checked + a:after{
+	content:"";
+	width:0;
+	height:0;
+	overflow:hidden;
+	border:25px solid transparent;
+	border-bottom-color:#07075F;
+	position:absolute;
+	bottom:100%;
+	left:50%;
+	margin-left:-25px;
+}
+
+.st-container input:hover + a{
+	background:#0E1574;
+}
+
+.st-scroll,
+.st-panel{
+	width:100%;
+	height:100%;
+	position:relative;		
+}
+
+.st-scroll{
+	left:0;
+	top:0;
+	-webkit-transform:translate3d(0,0,0);
+	-moz-transform:translate3d(0,0,0);
+	-o-transform:translate3d(0,0,0);
+	-ms-transform:translate3d(0,0,0);
+	transform:translate3d(0,0,0);
+	-webkit-backface-visibility:hidden;
+	-webkit-transition:all 0.6s ease-in-out;
+	-moz-transition:all 0.6s ease-in-out;
+	-o-transition:all 0.6s ease-in-out;
+	-ms-transition:all 0.6s ease-in-out;
+	transition:all 0.6s ease-in-out;
+}
+
+.st-panel{
+	background:#fff;
+	overflow:hidden;
+}
+
+#st-control-1:checked ~ .st-scroll{
+	-webkit-transform:translateY(0%);
+	-moz-transform:translateY(0%);
+	-o-transform:translateY(0%);
+	-ms-transform:translateY(0%);
+	transform:translateY(0%);
+}
+
+#st-control-2:checked ~ .st-scroll{
+	-webkit-transform:translateY(-100%);
+	-moz-transform:translateY(-100%);
+	-o-transform:translateY(-100%);
+	-ms-transform:translateY(-100%);
+	transform:translateY(-100%);
+}
+
+#st-control-3:checked ~ .st-scroll{
+	-webkit-transform:translateY(-200%);
+	-moz-transform:translateY(-200%);
+	-o-transform:translateY(-200%);
+	-ms-transform:translateY(-200%);
+	transform:translateY(-200%);
+}
+
+#st-control-4:checked ~ .st-scroll{
+	-webkit-transform:translateY(-300%);
+	-moz-transform:translateY(-300%);
+	-o-transform:translateY(-300%);
+	-ms-transform:translateY(-300%);
+	transform:translateY(-300%);
+}
+
+#st-control-5:checked ~ .st-scroll{
+	-webkit-transform:translateY(-400%);
+	-moz-transform:translateY(-400%);
+	-o-transform:translateY(-400%);
+	-ms-transform:translateY(-400%);
+	transform:translateY(-400%);
+}
+
+.st-desc{
+	width:240px;
+	height:240px;
+	background:#B5EBFF;
+	position:absolute;
+	left:50%;
+	top:0;
+	margin-left:-120px;
+	-webkit-transform:translateY(-50%) rotate(45deg);
+	-moz-transform:translateY(-50%) rotate(45deg);
+	-o-transform:translateY(-50%) rotate(45deg);
+	-ms-transform:translateY(-50%) rotate(45deg);
+	transform:translateY(-50%) rotate(45deg);
+}
+
+.st-panel h2{
+	font-size:54px;
+	font-weight:700;
+	color:#0FF;
+	text-align:center;
+	line-height:50px;
+	width:30%;
+	position:absolute;
+	left:35%;
+	top:60%;
+	margin-top:-150px;
+	text-shadow:1px 1px 1px #000000;
+	-webkit-backface-visibility:hidden;
+}
+
+.st-panel p{
+	font-size:22px;
+	font-weight:400;
+	color:#666;
+	text-align:center;
+	line:height:60px;
+	width:60%;
+	position:absolute;
+	left:20%;
+	top:60%;
+	margin-top:-40px;
+}
+
+.st-panel a{
+	font-size:22px;
+	font-weight:400;
+	color:#666;
+	text-align:center;
+	line:height:60px;
+	width:60%;
+	position:absolute;
+	left:20%;
+	top:60%;
+	margin-top:-40px;
+}
+
+.st-panel img{
+	width:40%;
+	height:55%;
+	position:absolute;
+	left:55%;
+	top:25%;
+}
+
+#st-panel-1 h2{
+	font-size:70px;
+	font-weight:700;
+	color:#0FF;
+	text-align:center;
+	line-height:75px;
+	width:10%;
+	position:absolute;
+	left:20%;
+	top:40%;
+	margin-top:-150px;
+	text-shadow:1px 1px 1px #000000;
+	-webkit-backface-visibility:hidden;
+}
+
+#st-control-1:checked ~ .st-scroll #st-panel-1 h2,
+#st-control-2:checked ~ .st-scroll #st-panel-2 h2,
+#st-control-3:checked ~ .st-scroll #st-panel-3 h2,
+#st-control-4:checked ~ .st-scroll #st-panel-4 h2,
+#st-control-5:checked ~ .st-scroll #st-panel-5 h2{
+	-webkit-animation:moveDown 0.6s ease-in-out 0.2s backwards;
+	-moz-animation:moveDown 0.6s ease-in-out 0.2s backwards;
+	-o-animation:moveDown 0.6s ease-in-out 0.2s backwards;
+	-ms-animation:moveDown 0.6s ease-in-out 0.2s backwards;
+	animation:moveDown 0.6s ease-in-out 0.2s backwards;
+}
+
+@-webkit-keyframes moveDown{
+	0%{
+		-webkit-transform:translateY(-40px);
+		opacity:0;
+	}
+	100%{
+		-webkit-transform:translateY(0px);
+		opacity:1;
+	}
+}
+
+@-moz-keyframes moveDown{
+	0%{
+		-moz-transform:translateY(-40px);
+		opacity:0;
+	}
+	100%{
+		-moz-transform:translateY(0px);
+		opacity:1;
+	}
+}
+
+@-o-keyframes moveDown{
+	0%{
+		-o-transform:translateY(-40px);
+		opacity:0;
+	}
+	100%{
+		-o-transform:translateY(0px);
+		opacity:1;
+	}
+}
+
+@-ms-keyframes moveDown{
+	0%{
+		-ms-transform:translateY(-40px);
+		opacity:0;
+	}
+	100%{
+		-ms-transform:translateY(0px);
+		opacity:1;
+	}
+}
+
+@keyframes moveDown{
+	0%{
+		transform:translateY(-40px);
+		opacity:0;
+	}
+	100%{
+		transform:translateY(0px);
+		opacity:1;
+	}
+}
+
+#st-control-1:checked ~ .st-scroll #st-panel-1 img,
+#st-control-2:checked ~ .st-scroll #st-panel-2 p,
+#st-control-3:checked ~ .st-scroll #st-panel-3 p,
+#st-control-3:checked ~ .st-scroll #st-panel-3 a,
+#st-control-4:checked ~ .st-scroll #st-panel-4 p,
+#st-control-5:checked ~ .st-scroll #st-panel-5 p{
+	-webkit-animation:moveUp 0.6s ease-in-out 0.2s backwards;
+	-moz-animation:moveUp 0.6s ease-in-out 0.2s backwards;
+	-o-animation:moveUp 0.6s ease-in-out 0.2s backwards;
+	-ms-animation:moveUp 0.6s ease-in-out 0.2s backwards;
+	animation:moveUp 0.6s ease-in-out 0.2s backwards;
+}
+
+@-webkit-keyframes moveUp{
+	0%{
+		-webkit-transform:translateY(40px);
+		opacity:0;
+	}
+	100%{
+		-webkit-transform:translateY(0px);
+		opacity:1;
+	}
+}
+
+@-moz-keyframes moveUp{
+	0%{
+		-moz-transform:translateY(40px);
+		opacity:0;
+	}
+	100%{
+		-moz-transform:translateY(0px);
+		opacity:1;
+	}
+}
+
+@-o-keyframes moveUp{
+	0%{
+		-o-transform:translateY(40px);
+		opacity:0;
+	}
+	100%{
+		-o-transform:translateY(0px);
+		opacity:1;
+	}
+}
+
+@-ms-keyframes moveUp{
+	0%{
+		-ms-transform:translateY(40px);
+		opacity:0;
+	}
+	100%{
+		-ms-transform:translateY(0px);
+		opacity:1;
+	}
+}
+
+@keyframes moveUp{
+	0%{
+		transform:translateY(40px);
+		opacity:0;
+	}
+	100%{
+		transform:translateY(0px);
+		opacity:1;
+	}
+}
+
+.st-color {
+	background:#B5EBFF;
+}
+
+.st-color .st-desc{
+	background:#fff;
+}
+
+.st-color h2{
+	color:#fff;
+}
+
+.st-color p{
+	color:#333;
+}
+
+.st-img{
+	width:900px;
+	height:600px;
+	position:absolute;
+	top:0;
+	left:40%;
+}
+
+@media screen and (max-width:800px){
+	.st-panel h2{
+		font-size:30px;
+	}
+	.st-panel p{
+		font-size:15px;
+	}
+	.st-container > a{
+		font-size:10px;
+	}
+	#st-panel-1 img{
+		width:60%;
+		height:30%;
+		left:20%;
+		top:45%
+	}
+	#st-panel-1 h2{
+		font-size:50px;
+		line-height:60px;
+		width:90%;
+        left:5%;
+		top:50%;
+	}
+	.st-desc{
+		width:120px;
+		height:120px;
+		margin-left:-60px;
+	}
+	
+}
